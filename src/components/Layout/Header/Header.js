@@ -18,21 +18,21 @@ const Header = () => {
       >
         <div className={classes.header_subdiv}>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="#home">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="/">
               Dummy Shop
             </Nav.Link>
           </Nav>
         </div>
         <div>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="#home">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="home">
               Home
             </Nav.Link>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="#store">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="store">
               Store
             </Nav.Link>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="#about">
-              About
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="contact">
+              Contact Me
             </Nav.Link>
           </Nav>
         </div>

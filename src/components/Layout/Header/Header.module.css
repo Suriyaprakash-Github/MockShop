@@ -3,14 +3,9 @@
   color: white;
 }
 
-.header_link:hover {
+/* .header_link:hover {
   color: #343a40;
   background-color: white;
   border-radius: 0.2rem;
   padding: 0.5em;
-}
-
-.header_btn_div {
-  display: flex;
-  justify-content: space-between;
-}
+} */
