@@ -8,7 +8,6 @@ function App() {
   return (
     <div className={classes.mainDiv}>
       <Header />
-      <h1>MockShop</h1>
       <ProductItem />
     </div>
   );

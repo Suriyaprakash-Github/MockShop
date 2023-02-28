@@ -1,15 +1,6 @@
-.navbar {
-  background-color: #343a40;
-  border-radius: 0.2em;
-  justify-content: space-between;
-}
-
 .header_subdiv {
   justify-content: center;
-}
-.header_link {
   color: white;
-  margin: 10px;
 }
 
 .header_link:hover {

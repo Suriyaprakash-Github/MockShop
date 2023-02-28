@@ -7,33 +7,41 @@ import classes from "./Header.module.css";
 const Header = () => {
   return (
     <>
-      <Navbar className={classes.navbar} expand="lg">
+      <Navbar
+        style={{
+          justifyContent: "space-between",
+          backgroundColor: "#343a40",
+          borderRadius: "0.2em",
+          marginBottom: "1rem",
+        }}
+        expand="lg"
+      >
         <div className={classes.header_subdiv}>
           <Nav>
-            <Nav.Link className={classes.header_link} href="#home">
-              Mock Shop
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#home">
+              Dummy Shop
             </Nav.Link>
           </Nav>
         </div>
         <div>
           <Nav>
-            <Nav.Link className={classes.header_link} href="#home">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#home">
               Home
             </Nav.Link>
-            <Nav.Link className={classes.header_link} href="#store">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#store">
               Store
             </Nav.Link>
-            <Nav.Link className={classes.header_link} href="#about">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#about">
               About
             </Nav.Link>
           </Nav>
         </div>
-        <div className={classes.header_btn_div}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Nav>
-            <Nav.Link className={classes.header_link} href="#">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#">
               Login
             </Nav.Link>
-            <Nav.Link className={classes.header_link} href="#">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="#">
               Cart
             </Nav.Link>
           </Nav>

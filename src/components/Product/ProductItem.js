@@ -3,14 +3,14 @@ import axios from "axios";
 
 import Products from "./Products";
 
-import classes from "./productItem.module.css";
+import classes from "./ProductItem.module.css";
 
 const ProductItem = () => {
   const [list, updatedList] = useState([]);
   useEffect(() => {
     const request = async () => {
       const response = await axios.get(
-        "https://mock.shop/api?query={products(first:%2012){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}}"
+        "https://mock.shop/api?query={products(first:%204){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}}"
       );
       updatedList(response.data.data.products.edges);
     };
