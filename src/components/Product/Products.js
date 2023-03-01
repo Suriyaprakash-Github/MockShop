@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
+import CartContext from "../../store/cart-context";
+
 const Products = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const addItemHandler = (e) => {
+    cartCtx.addItem({
+      id: props.id,
+      price: props.price,
+      title: props.title,
+    });
+  };
+
   return (
     <>
       <Card
@@ -31,6 +43,7 @@ const Products = (props) => {
               backgroundColor: "#343a40",
               alignContent: "center",
             }}
+            onClick={addItemHandler}
           >
             Add {props.title} to Cart
           </Button>

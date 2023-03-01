@@ -24,6 +24,7 @@ const ProductItem = () => {
           {list.map((item) => (
             <Products
               key={item.node.id}
+              id={item.node.id}
               title={item.node.title}
               description={item.node.description}
               image={item.node.featuredImage.url}
