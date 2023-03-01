@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+
+import LoginContext from "../../../store/LoginContext";
 
 import classes from "./Header.module.css";
 
 const Header = () => {
+  const authCtx = useContext(LoginContext);
+  const history = useNavigate();
+  const logoutHandler = () => {
+    authCtx.logout();
+    history("/Login");
+  };
+
   return (
     <>
       <Navbar
@@ -38,9 +48,20 @@ const Header = () => {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="#">
-              Login
-            </Nav.Link>
+            {authCtx.isLoggedIn ? (
+              <Nav.Link
+                style={{ color: "white", margin: "10px" }}
+                onClick={logoutHandler}
+                href="login"
+              >
+                Logout
+              </Nav.Link>
+            ) : (
+              <Nav.Link style={{ color: "white", margin: "10px" }} href="login">
+                Login
+              </Nav.Link>
+            )}
+
             <Nav.Link style={{ color: "white", margin: "10px" }} href="#">
               Cart
             </Nav.Link>
