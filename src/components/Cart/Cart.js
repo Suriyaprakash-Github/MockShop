@@ -8,15 +8,21 @@ import CartContext from "../../store/cart-context";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
+  const removeHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+
   const cartItems = cartCtx.items.map((item) => (
-    <div key={item.id}>
+    <div key={item.id} id={item.id}>
       {item.title} : {item.price}
+      <Button onClick={removeHandler.bind(null, item.id)}>Remove</Button>
     </div>
   ));
 
   const total = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + Number(item.price);
   }, 0);
+
   return (
     <Modal
       {...props}
@@ -31,8 +37,10 @@ const Cart = (props) => {
       <Modal.Body>
         <h4>Title</h4>
         <div>
-          <span>{cartItems}</span>
-
+          <span>{cartItems} </span>
+          <span></span>
+        </div>
+        <div>
           <span>Total</span>
           <span>{total}</span>
         </div>

@@ -3,13 +3,16 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 import CartContext from "../../store/cart-context";
+import LoginContext from "../../store/LoginContext";
 
 const Products = (props) => {
   const cartCtx = useContext(CartContext);
+  const authCtx = useContext(LoginContext);
 
   const addItemHandler = (e) => {
     cartCtx.addItem({
       id: props.id,
+      email: authCtx.email,
       key: props.id,
       price: props.price,
       title: props.title,

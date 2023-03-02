@@ -60,7 +60,7 @@ const Login = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        authCtx.login(data.idToken, data.email);
         history("/store");
       })
       .catch((err) => {

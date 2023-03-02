@@ -9,13 +9,16 @@ const CartProvider = (props) => {
       return items.concat(item);
     });
   };
-
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (incoming) => {
+    const toRemove = items.findIndex((o) => o.id === `${incoming}`);
+    items.splice(toRemove, 1);
+    let updatedItem = items;
+    console.log(updatedItem);
+  };
 
   const cartContext = {
     items: items,
     totalAmount: 0,
-    key: props.key,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
