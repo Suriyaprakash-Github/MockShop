@@ -4,21 +4,18 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 import LoginContext from "../../../store/LoginContext";
-import CartContext from "../../../store/cart-context";
 
 import classes from "./Header.module.css";
+import CartButton from "./CartButton";
 
 const Header = () => {
   const authCtx = useContext(LoginContext);
-  const cartCtx = useContext(CartContext);
 
   const history = useNavigate();
   const logoutHandler = () => {
     authCtx.logout();
     history("/Login");
   };
-
-  const numberOfItems = cartCtx.items.length;
 
   return (
     <>
@@ -66,27 +63,7 @@ const Header = () => {
                 Login
               </Nav.Link>
             )}
-
-            <Nav.Link
-              style={{ color: "white", margin: "10px", display: "flex" }}
-              href="#"
-            >
-              Cart
-              <div
-                style={{
-                  marginLeft: "0.5rem",
-                  height: "1.5rem",
-                  width: "1.5rem",
-                  border: "1px solid #0275d8",
-                  borderRadius: "50%",
-                  display: "flex",
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                }}
-              >
-                {numberOfItems}
-              </div>
-            </Nav.Link>
+            <CartButton />
           </Nav>
         </div>
       </Navbar>

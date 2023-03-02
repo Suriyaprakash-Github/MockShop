@@ -10,6 +10,7 @@ const Products = (props) => {
   const addItemHandler = (e) => {
     cartCtx.addItem({
       id: props.id,
+      key: props.id,
       price: props.price,
       title: props.title,
     });
