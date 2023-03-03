@@ -12,7 +12,7 @@ const Products = (props) => {
   const addItemHandler = (e) => {
     cartCtx.addItem({
       id: props.id,
-      email: authCtx.email,
+      email: authCtx.email.replace(".", "").replace("@", ""),
       key: props.id,
       price: props.price,
       title: props.title,
