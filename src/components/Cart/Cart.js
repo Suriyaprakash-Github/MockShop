@@ -13,9 +13,9 @@ const Cart = (props) => {
   };
 
   const cartItems = cartCtx.items.map((item) => (
-    <div key={item.id} id={item.id}>
+    <div key={item.id + Math.random()} id={item.id}>
       {item.title} : {item.price}
-      <Button onClick={removeHandler.bind(null, item.id)}>Remove</Button>
+      <Button onClick={removeHandler.bind(null, item)}>Remove</Button>
     </div>
   ));
 

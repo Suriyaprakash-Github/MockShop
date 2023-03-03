@@ -28,20 +28,22 @@ const cartReducer = (state, action) => {
 
   if (action.type === "REMOVE") {
     let updatedItems;
-    const toRemove = state.items.findIndex((item) => item.id === action.id);
+    const toRemove = state.items.findIndex(
+      (item) => item.id.id === action.id.id
+    );
     state.items.splice(toRemove, 1);
     updatedItems = [...state.items];
 
-    // fetch(
-    //   `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.item.email}.json`,
-    //   {
-    //     method: "PUT",
-    //     body: JSON.stringify(updatedItems),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
+    fetch(
+      `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.id.email}.json`,
+      {
+        method: "PUT",
+        body: JSON.stringify(updatedItems),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     return {
       items: updatedItems,
