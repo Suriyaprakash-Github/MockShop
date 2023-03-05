@@ -31,7 +31,7 @@ const Header = () => {
         <div className={classes.header_subdiv}>
           <Nav>
             <Nav.Link style={{ color: "white", margin: "10px" }} href="/">
-              Dummy Shop
+              The Brand Shop
             </Nav.Link>
           </Nav>
         </div>

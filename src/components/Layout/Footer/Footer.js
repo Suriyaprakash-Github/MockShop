@@ -59,12 +59,12 @@ const Footer = () => {
             style={{
               textDecoration: "none",
               color: "white",
-              fontSize: "2rem",
+              fontSize: "2em",
               marginLeft: "2rem",
             }}
             href="/"
           >
-            Dummy Shop
+            The Brand Shop
           </a>
         </div>
         <div style={{ display: "flex", marginRight: "2rem" }}>

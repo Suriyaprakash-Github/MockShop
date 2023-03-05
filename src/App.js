@@ -10,6 +10,8 @@ import Store from "./pages/Store";
 import ContactUs from "./pages/ContactUs";
 import Login from "./components/Login/Login";
 
+import ProductSaved from "./components/Product/ProductSaved";
+
 function App() {
   const authCtx = useContext(LoginContext);
 
@@ -29,6 +31,7 @@ function App() {
         <Route path="home" exact element={<Home />}></Route>
       </Routes>
       <Footer />
+      <ProductSaved />
     </div>
   );
 }
