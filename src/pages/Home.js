@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -48,8 +49,8 @@ const About = () => {
           <p style={{ color: "white", fontFamily: "Climate Crisis" }}>
             Push Your Performance with our athletic wear
           </p>
-          <a
-            href="/store"
+          <NavLink
+            to="/store"
             style={{
               textDecoration: "none",
               color: "white",
@@ -57,7 +58,7 @@ const About = () => {
             }}
           >
             Shop Now
-          </a>
+          </NavLink>
         </div>
       </div>
       <div>

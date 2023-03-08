@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import CartContext from "../../store/cart-context";
 import LoginContext from "../../store/LoginContext";
 
+import { Link } from "react-router-dom";
+
 const Products = (props) => {
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(LoginContext);
@@ -12,6 +14,7 @@ const Products = (props) => {
   const addItemHandler = (e) => {
     cartCtx.addItem({
       id: props.id,
+      url: props.url,
       email: authCtx.email.replace(".", "").replace("@", ""),
       key: props.id,
       price: props.price,
@@ -37,6 +40,7 @@ const Products = (props) => {
           }}
         >
           <Card.Title style={{ color: "white" }}>{props.title}</Card.Title>
+          <Link to={`/products/${props.url}`}>Link</Link>
           <Card.Text style={{ justifyContent: "center", color: "#6c757d" }}>
             {props.description}
           </Card.Text>

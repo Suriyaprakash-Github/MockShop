@@ -11,6 +11,7 @@ import ContactUs from "./pages/ContactUs";
 import Login from "./components/Login/Login";
 
 import ProductSaved from "./components/Product/ProductSaved";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   const authCtx = useContext(LoginContext);
@@ -22,8 +23,13 @@ function App() {
         {authCtx.isLoggedIn ? (
           <Route path="store" exact element={<Store />}></Route>
         ) : (
-          <Route path="store" element={<Navigate to="/login" />}></Route>
+          <Route path="store" exact element={<Navigate to="/login" />}></Route>
         )}
+        <Route
+          exact
+          path="/products/:product_id"
+          element={<ProductDetails />}
+        ></Route>
 
         <Route path="contact" exact element={<ContactUs />}></Route>
         <Route path="login" exact element={<Login />}></Route>
@@ -31,7 +37,7 @@ function App() {
         <Route path="home" exact element={<Home />}></Route>
       </Routes>
       <Footer />
-      <ProductSaved />
+      {/* <ProductSaved /> */}
     </div>
   );
 }

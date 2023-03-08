@@ -25,6 +25,12 @@ const ProductItem = () => {
             <Products
               key={item.node.id}
               id={item.node.id}
+              url={item.node.id
+                .replace(":", "")
+                .replace("/", "")
+                .replace("/", "")
+                .replace("/", "")
+                .replace("/", "")}
               title={item.node.title}
               description={item.node.description}
               image={item.node.featuredImage.url}
