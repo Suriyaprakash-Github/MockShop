@@ -49,9 +49,9 @@ function App() {
       <Header />
       <Routes>
         {authCtx.isLoggedIn ? (
-          <Route path="store" exact element={<Store />}></Route>
+          <Route path="/store" exact element={<Store />}></Route>
         ) : (
-          <Route path="store" exact element={<Navigate to="/login" />}></Route>
+          <Route path="/store" exact element={<Navigate to="/login" />}></Route>
         )}
         <Route
           exact
@@ -59,10 +59,10 @@ function App() {
           element={<ProductDetails />}
         ></Route>
 
-        <Route path="contact" exact element={<ContactUs />}></Route>
-        <Route path="login" exact element={<Login />}></Route>
+        <Route path="/contact" exact element={<ContactUs />}></Route>
+        <Route path="/login" exact element={<Login />}></Route>
         <Route path="/" element={<Navigate to="/home" />}></Route>
-        <Route path="home" exact element={<Home />}></Route>
+        <Route path="/home" exact element={<Home />}></Route>
       </Routes>
       <Footer />
     </div>

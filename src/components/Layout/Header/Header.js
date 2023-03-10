@@ -37,13 +37,16 @@ const Header = () => {
         </div>
         <div>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="home">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="/home">
               Home
             </Nav.Link>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="store">
+            <Nav.Link style={{ color: "white", margin: "10px" }} href="/store">
               Store
             </Nav.Link>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="contact">
+            <Nav.Link
+              style={{ color: "white", margin: "10px" }}
+              href="/contact"
+            >
               Contact Me
             </Nav.Link>
           </Nav>
@@ -59,7 +62,10 @@ const Header = () => {
                 Logout
               </Nav.Link>
             ) : (
-              <Nav.Link style={{ color: "white", margin: "10px" }} href="login">
+              <Nav.Link
+                style={{ color: "white", margin: "10px" }}
+                href="/login"
+              >
                 Login
               </Nav.Link>
             )}
