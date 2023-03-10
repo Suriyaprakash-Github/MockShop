@@ -28,9 +28,7 @@ const cartReducer = (state, action) => {
 
   if (action.type === "REMOVE") {
     let updatedItems;
-    const toRemove = state.items.findIndex(
-      (item) => item.id.id === action.id.id
-    );
+    const toRemove = state.items.findIndex((item) => item.id === action.id.id);
     state.items.splice(toRemove, 1);
     updatedItems = [...state.items];
 
@@ -62,8 +60,8 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "ADD", item: item });
   };
 
-  const removeItemFromCartHandler = (id) => {
-    dispatchCartAction({ type: "REMOVE", id: id });
+  const removeItemFromCartHandler = (item) => {
+    dispatchCartAction({ type: "REMOVE", id: item });
   };
 
   const cartContext = {

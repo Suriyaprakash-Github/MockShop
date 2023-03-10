@@ -8,8 +8,8 @@ import CartContext from "../../store/cart-context";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const removeHandler = (id) => {
-    cartCtx.removeItem(id);
+  const removeHandler = (item) => {
+    cartCtx.removeItem(item);
   };
 
   const cartItems = cartCtx.items.map((item) => (
@@ -35,13 +35,11 @@ const Cart = (props) => {
         <Modal.Title id="contained-modal-title-vcenter">Your Cart</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Title</h4>
         <div>
           <span>{cartItems} </span>
-          <span></span>
         </div>
         <div>
-          <span>Total</span>
+          <span>Total:</span>
           <span>{total}</span>
         </div>
       </Modal.Body>

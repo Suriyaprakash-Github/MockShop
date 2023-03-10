@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 
 import axios from "axios";
 
@@ -36,6 +35,7 @@ const ProductDetails = (props) => {
           <div style={{ paddingRight: "2rem" }}>
             <img
               variant="top"
+              alt="product"
               src={list[index].node.featuredImage.url}
               style={{ width: "50vw" }}
             />
