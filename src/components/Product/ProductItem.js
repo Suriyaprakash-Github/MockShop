@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Products from "./Products";
 
-import classes from "./ProductItem.module.css";
+import classes from "./productItem.module.css";
 
 const ProductItem = () => {
   const [list, updatedList] = useState([]);
