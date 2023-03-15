@@ -33,7 +33,7 @@ const cartReducer = (state, action) => {
     updatedItems = [...state.items];
 
     fetch(
-      `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.id.email}.json`,
+      `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.id.url}.json`,
       {
         method: "PUT",
         body: JSON.stringify(updatedItems),

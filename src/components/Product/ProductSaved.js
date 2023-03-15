@@ -33,7 +33,7 @@ const ProductSaved = () => {
           });
         });
     }
-  }, [authCtx]);
+  });
 
   return <></>;
 };
