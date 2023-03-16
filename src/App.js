@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
 import LoginContext from "./store/LoginContext";
-// import CartContext from "./store/cart-context";
-// import axios from "axios";
 
 import classes from "./App.module.css";
 import Home from "./pages/Home";
@@ -17,7 +15,6 @@ import ProductSaved from "./components/Product/ProductSaved";
 
 function App() {
   const authCtx = useContext(LoginContext);
-  // const cartCtx = useContext(CartContext);
 
   return (
     <div className={classes.mainDiv}>

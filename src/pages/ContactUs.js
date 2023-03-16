@@ -3,6 +3,7 @@ import Photo from "./../components/assets/photo.jpg";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const ContactUs = () => {
   const enteredName = useRef();
@@ -56,41 +57,60 @@ const ContactUs = () => {
           <Image src={Photo} alt="..." fluid style={{ borderRadius: "10%" }} />
         </Container>
       </Container>
-      <form
-        onSubmit={contactFormhandler}
+      <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <label style={{ color: "white" }} htmlFor="name">
-          Name:
-        </label>
-        <input type="text" id="name" ref={enteredName} required />
-
-        <label style={{ color: "white" }} htmlFor="email">
-          Email:{" "}
-        </label>
-        <input type="email" id="email" ref={enteredEmail} required />
-
-        <label style={{ color: "white" }} htmlFor="phone">
-          Phone Number
-        </label>
-        <input type="number" id="phone" ref={enteredPhone} />
-
-        <label style={{ color: "white" }} htmlFor="description">
-          Description
-        </label>
-        <input type="text" id="description" ref={enteredDescription} />
-
-        <Button
-          style={{ borderRadius: "4px", backgroundColor: "#343a40" }}
-          type="submit"
+        <Form
+          onSubmit={contactFormhandler}
+          style={{
+            width: "50%",
+            backgroundColor: "#343a40",
+            padding: "2rem",
+            margin: "2rem",
+            borderRadius: "0.4rem",
+          }}
         >
-          Submit
-        </Button>
-      </form>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label style={{ color: "white" }} htmlFor="name">
+              Name:
+            </Form.Label>
+            <Form.Control type="text" id="name" ref={enteredName} required />
+
+            <Form.Label style={{ color: "white" }} htmlFor="email">
+              Email:{" "}
+            </Form.Label>
+            <Form.Control type="email" id="email" ref={enteredEmail} required />
+
+            <Form.Label style={{ color: "white" }} htmlFor="phone">
+              Phone Number
+            </Form.Label>
+            <Form.Control type="number" id="phone" ref={enteredPhone} />
+
+            <Form.Label style={{ color: "white" }} htmlFor="description">
+              Description
+            </Form.Label>
+            <Form.Control
+              type="text"
+              id="description"
+              ref={enteredDescription}
+            />
+
+            <Button
+              style={{
+                borderRadius: "4px",
+                backgroundColor: "#343a40",
+                marginTop: "2rem",
+              }}
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Form.Group>
+        </Form>
+      </div>
     </>
   );
 };
