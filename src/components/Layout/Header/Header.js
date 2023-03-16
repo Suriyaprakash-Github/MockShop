@@ -35,7 +35,7 @@ const Header = () => {
               style={{ color: "white", margin: "10px", textDecoration: "none" }}
               to="/"
             >
-              The Brand Shop
+              The Mock Shop
             </Link>
           </Nav>
         </div>
