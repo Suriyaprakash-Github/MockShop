@@ -64,7 +64,7 @@ const Footer = () => {
             }}
             href="/"
           >
-            The Brand Shop
+            The Mock Shop
           </a>
         </div>
         <div style={{ display: "flex", marginRight: "2rem" }}>
