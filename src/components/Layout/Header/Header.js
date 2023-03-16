@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 import LoginContext from "../../../store/LoginContext";
 
@@ -30,25 +31,39 @@ const Header = () => {
       >
         <div className={classes.header_subdiv}>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="/">
+            <Link
+              style={{ color: "white", margin: "10px", textDecoration: "none" }}
+              to="/"
+            >
               The Brand Shop
-            </Nav.Link>
+            </Link>
           </Nav>
         </div>
         <div>
           <Nav>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="/home">
+            <Link
+              style={{ color: "white", margin: "10px", textDecoration: "none" }}
+              to="/home"
+            >
               Home
-            </Nav.Link>
-            <Nav.Link style={{ color: "white", margin: "10px" }} href="/store">
+            </Link>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "white",
+                margin: "10px",
+                alignItems: "center",
+              }}
+              to="/store"
+            >
               Store
-            </Nav.Link>
-            <Nav.Link
-              style={{ color: "white", margin: "10px" }}
-              href="/contact"
+            </Link>
+            <Link
+              style={{ color: "white", margin: "10px", textDecoration: "none" }}
+              to="/contact"
             >
               Contact Me
-            </Nav.Link>
+            </Link>
           </Nav>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>

@@ -20,7 +20,6 @@ const cartReducer = (state, action) => {
         },
       }
     );
-
     return {
       items: updatedItems,
     };
@@ -33,7 +32,7 @@ const cartReducer = (state, action) => {
     updatedItems = [...state.items];
 
     fetch(
-      `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.id.url}.json`,
+      `https://ecomm-c1511-default-rtdb.firebaseio.com/cart/${action.id.email}.json`,
       {
         method: "PUT",
         body: JSON.stringify(updatedItems),
@@ -43,6 +42,13 @@ const cartReducer = (state, action) => {
       }
     );
 
+    return {
+      items: updatedItems,
+    };
+  }
+  if (action.type === "RECEIVED") {
+    let updatedItems;
+    updatedItems = state.items.concat(action.item);
     return {
       items: updatedItems,
     };
@@ -64,10 +70,15 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "REMOVE", id: item });
   };
 
+  const receivedItemHandler = (item) => {
+    dispatchCartAction({ type: "RECEIVED", item: item });
+  };
+
   const cartContext = {
     items: cartState.items,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    receivedItem: receivedItemHandler,
   };
 
   return (

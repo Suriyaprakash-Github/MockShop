@@ -40,7 +40,7 @@ function App() {
         <Route path="/home" exact element={<Home />}></Route>
       </Routes>
       <Footer />
-      {/* <ProductSaved />; */}
+      {authCtx.isLoggedIn && <ProductSaved />} ;
     </div>
   );
 }

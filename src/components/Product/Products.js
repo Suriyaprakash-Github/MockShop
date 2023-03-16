@@ -40,7 +40,12 @@ const Products = (props) => {
           }}
         >
           <Card.Title style={{ color: "white" }}>{props.title}</Card.Title>
-          <Link to={`/products/${props.url}`}>Link</Link>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to={`/products/${props.url}`}
+          >
+            View Product
+          </Link>
           <Card.Text style={{ justifyContent: "center", color: "#6c757d" }}>
             {props.description}
           </Card.Text>
