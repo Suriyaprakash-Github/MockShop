@@ -12,8 +12,8 @@ Features to be added:
    1.~~Deploy on Firebase~~
    2.~~Deployment using Github Actions~~
    3. Add Variants to a product
-   3. Add Category of products
-   4. Filter and sorting of Products
+   4. Add Category of products
+   5. Filter and sorting of Products
 
 
 
